@@ -1,0 +1,5 @@
+,t2image,t2label
+22,decathalon_prostate/prostate_42/t2image/t2image.nii,decathalon_prostate/prostate_42/t2labels/t2label.nii
+23,decathalon_prostate/prostate_14/t2image/t2image.nii,decathalon_prostate/prostate_14/t2labels/t2label.nii
+24,decathalon_prostate/prostate_21/t2image/t2image.nii,decathalon_prostate/prostate_21/t2labels/t2label.nii
+25,decathalon_prostate/prostate_13/t2image/t2image.nii,decathalon_prostate/prostate_13/t2labels/t2label.nii
