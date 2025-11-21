@@ -8,7 +8,7 @@ import torch.distributed as dist
 import torch.nn as nn
 import torchio as tio
 import torchvision
-from monai.metrics import compute_meandice, compute_hausdorff_distance
+from monai.metrics import compute_hausdorff_distance
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import utils as vutils
 from torchvision.transforms import InterpolationMode
