@@ -1,7 +1,7 @@
-,t2image,t2label
-16,decathalon_prostate/prostate_17/t2image/t2image.nii,decathalon_prostate/prostate_17/t2labels/t2label.nii
-17,decathalon_prostate/prostate_25/t2image/t2image.nii,decathalon_prostate/prostate_25/t2labels/t2label.nii
-18,decathalon_prostate/prostate_28/t2image/t2image.nii,decathalon_prostate/prostate_28/t2labels/t2label.nii
-19,decathalon_prostate/prostate_31/t2image/t2image.nii,decathalon_prostate/prostate_31/t2labels/t2label.nii
-20,decathalon_prostate/prostate_46/t2image/t2image.nii,decathalon_prostate/prostate_46/t2labels/t2label.nii
-21,decathalon_prostate/prostate_35/t2image/t2image.nii,decathalon_prostate/prostate_35/t2labels/t2label.nii
+,adcimage,t2image,t2label
+16,decathalon_prostate/prostate_17/adcimage/adcimage.nii,decathalon_prostate/prostate_17/t2image/t2image.nii,decathalon_prostate/prostate_17/t2labels/t2label.nii
+17,decathalon_prostate/prostate_25/adcimage/adcimage.nii,decathalon_prostate/prostate_25/t2image/t2image.nii,decathalon_prostate/prostate_25/t2labels/t2label.nii
+18,decathalon_prostate/prostate_28/adcimage/adcimage.nii,decathalon_prostate/prostate_28/t2image/t2image.nii,decathalon_prostate/prostate_28/t2labels/t2label.nii
+19,decathalon_prostate/prostate_31/adcimage/adcimage.nii,decathalon_prostate/prostate_31/t2image/t2image.nii,decathalon_prostate/prostate_31/t2labels/t2label.nii
+20,decathalon_prostate/prostate_46/adcimage/adcimage.nii,decathalon_prostate/prostate_46/t2image/t2image.nii,decathalon_prostate/prostate_46/t2labels/t2label.nii
+21,decathalon_prostate/prostate_35/adcimage/adcimage.nii,decathalon_prostate/prostate_35/t2image/t2image.nii,decathalon_prostate/prostate_35/t2labels/t2label.nii
