@@ -12,7 +12,7 @@ from monai.data import (
     DataLoader,
 )
 from monai.transforms import (
-    AddChanneld,
+    EnsureChannelFirstd,
     Compose,
     LoadImaged,
     Orientationd,
@@ -56,7 +56,7 @@ class ProstateMRIDataset(Dataset):
                 LoadImaged(
                      allow_missing_keys = True,keys = ["t2image", "adcimage", "t2labels", "adclabels"]
                 ),
-                AddChanneld( allow_missing_keys = True,keys=["t2image", "adcimage", "t2labels", "adclabels"]),
+                EnsureChannelFirstd( allow_missing_keys = True,keys=["t2image", "adcimage", "t2labels", "adclabels"],  channel_dim="no_channel"),
                 Orientationd(allow_missing_keys = True, keys=["t2image", "adcimage", "t2labels", "adclabels"], axcodes="RAS"),
                 NormalizeIntensityd(allow_missing_keys = True,  keys=["t2image", "adcimage"], nonzero=True, channel_wise=True),
                 SpatialPadd(
@@ -88,7 +88,7 @@ class ProstateMRIDataset(Dataset):
                     allow_missing_keys = True,
                     keys = ["t2image", "t2labels"],
                 ),
-                AddChanneld(allow_missing_keys = True,keys=["t2image", "t2labels"]),
+                EnsureChannelFirstd(allow_missing_keys = True,keys=["t2image", "t2labels"],  channel_dim="no_channel"),
                 Orientationd(allow_missing_keys = True,keys=["t2image",  "t2labels"],as_closest_canonical=True, axcodes="RAS"),
                 NormalizeIntensityd(allow_missing_keys = True,  keys=["t2image"], nonzero=True, channel_wise=True),
                 SpatialPadd(
