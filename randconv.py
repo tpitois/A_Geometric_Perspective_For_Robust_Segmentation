@@ -19,7 +19,7 @@ def randconv(image, K, mix, p, dim) -> torch.Tensor:
         else:
            random_convolution = nn.Conv3d(3, 3, 2*k + 1, padding=k)
         torch.nn.init.uniform_(random_convolution.weight,
-                              0, 1. / (3 * k * k))
+                              0, 1. if k == 0 else 1. / (3 * k * k))
         image_rc = random_convolution(image).to(image.device)
 
         if mix:
