@@ -13,13 +13,20 @@ def randconv(image, K, mix, p, dim) -> torch.Tensor:
     if p0 < p:
         return image
     else:
-        k = torch.randint(0, K+1, (1, )).item()
-        if dim == '2D':
-           random_convolution = nn.Conv2d(3, 3, 2*k + 1, padding=k)
+        k = torch.randint(0, K + 1, (1,)).item()
+
+        if k == 0:
+            bound = 1.0
         else:
-           random_convolution = nn.Conv3d(3, 3, 2*k + 1, padding=k)
-        torch.nn.init.uniform_(random_convolution.weight,
-                              0, 1. if k == 0 else 1. / (3 * k * k))
+            bound = 1.0 / (3 * k * k)
+
+        if dim == '2D':
+            random_convolution = nn.Conv2d(3, 3, 2 * k + 1, padding=k)
+        else:
+            random_convolution = nn.Conv3d(3, 3, 2 * k + 1, padding=k)
+
+        torch.nn.init.uniform_(random_convolution.weight, 0, bound)
+
         image_rc = random_convolution(image).to(image.device)
 
         if mix:
