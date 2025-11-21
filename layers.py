@@ -1,22 +1,16 @@
+from typing import Tuple
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from einops import rearrange
-import einops
-import numpy as np
-from torch import einsum
-from typing import Tuple, Union
-from collections import defaultdict
-
 from escnn.group import *
 from escnn.gspaces import *
 from escnn.nn import *
-
 from scipy import stats
-
-
-import math
 from scipy.cluster.vq import kmeans2
+
+
 def nonlinearity(x, act='swish'):
     #swish actication if act is swish else pick activation of your choice
     if act == 'swish':

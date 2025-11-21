@@ -1,29 +1,10 @@
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import einops
-from einops import rearrange
-import numpy as np
-from torch import einsum
 import math
-from layers import *
-from einops.layers.torch import Reduce
-from typing import Tuple, Union
-from collections import defaultdict
-from einops.layers.torch import Reduce
-import operator 
-
 
 from escnn.group import *
 from escnn.gspaces import *
 from escnn.nn import *
 
-
-import torch
-from torch import nn
-import numpy as np
-
-from scipy import stats
+from layers import *
 
 
 class UNet(nn.Module):

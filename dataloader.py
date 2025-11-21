@@ -1,95 +1,39 @@
 import time
-from pathlib import Path
-from datetime import datetime
 
-import torch
-from torch.utils.data import random_split, DataLoader
-import monai
 import gdown
-import pandas as pd
-import torchio as tio
-import pytorch_lightning as pl
 import matplotlib.pyplot as plt
-import seaborn as sns
-import os
-# from numpy.core.numeric import full
+import monai
 import pandas as pd
-import numpy as np
-from typing import Any, Dict, Optional
-from pandas.core.dtypes import base
+import pytorch_lightning as pl
+import seaborn as sns
 import torch
-from tqdm import tqdm
+import torchio as tio
 from monai.data import (
     DataLoader,
-    CacheDataset,
-    load_decathlon_datalist,
-    decollate_batch,
-    list_data_collate,
 )
-# import pickle
-from torch.utils.data.dataset import Dataset
-import pytorch_lightning
-from torch.utils.data import DataLoader
-from pytorch_lightning import LightningDataModule
-from pytorch_lightning.loggers import TensorBoardLogger
-from pytorch_lightning.callbacks import ModelCheckpoint
-import pytorch_lightning as pl
-import math
-import torchvision
-from skimage import measure
-from monai.losses import DiceCELoss
-
-from monai.metrics import DiceMetric,compute_meandice,  compute_hausdorff_distance, compute_average_surface_distance
-from torch.utils.data.distributed import DistributedSampler
 from monai.transforms import (
-    AsDiscrete,
     AddChanneld,
     Compose,
-    CropForegroundd,
     LoadImaged,
     Orientationd,
-    RandFlipd,
-    RandCropByPosNegLabeld,
     RandShiftIntensityd,
-    ScaleIntensityRanged,
-    Spacingd,
-    RandRotate90d,
-    ToTensord,
 )
-from monai.transforms  import (
-    AsDiscrete,
-    AddChanneld,
-    Compose,
-    CropForegroundd,
-    LoadImaged,
-    Orientationd,
-    RandFlipd,
-    RandCropByPosNegLabeld,
-    RandShiftIntensityd,
-    ScaleIntensityRanged,
-    Spacingd,
+from monai.transforms import (
     NormalizeIntensityd,
     SpatialPadd,
     CenterSpatialCropd,
-    RandRotated,
     RandAffined,
     RandGaussianSharpend,
     RandGaussianNoised,
     RandAdjustContrastd,
-    RandRotate90d,
-    RandBiasFieldd,
-    ToTensord,
-    ScaleIntensityd
+    RandBiasFieldd
 )
-import torchvision
-import torchvision.transforms as T
-import torchvision.transforms.functional as TF
-import random
-from PIL import Image
-from torch.utils.data.distributed import DistributedSampler
+from torch.utils.data import DataLoader
+# import pickle
+from torch.utils.data.dataset import Dataset
+from tqdm import tqdm
+
 #import torchio as tio
-from PIL import Image
-import subprocess
 sns.set()
 plt.rcParams['figure.figsize'] = 12, 8
 monai.utils.set_determinism()

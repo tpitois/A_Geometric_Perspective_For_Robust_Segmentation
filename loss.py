@@ -1,9 +1,7 @@
-import numpy as np
 import torch
-from scipy.ndimage import zoom
 import torch.nn as nn
-import SimpleITK as sitk
 import torch.nn.functional as F
+
 
 class DiceLoss(nn.Module):
     def __init__(self, n_classes):

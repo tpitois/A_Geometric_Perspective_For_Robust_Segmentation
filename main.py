@@ -1,20 +1,15 @@
 import argparse
-import datetime
-import numpy as np
-import torch
-import torch.backends.cudnn as cudnn
-import torch.nn as nn
-import torch.nn.functional as F
 import os
+
 import pytorch_lightning as pl
-from pytorch_lightning.loggers import TensorBoardLogger
-from pytorch_lightning.callbacks import ModelCheckpoint
-from models import *
+import torch.backends.cudnn as cudnn
+from traincontrastivegroup import TrainD4
+from traincontrastivekernel import TrainSE3
+
 from dataloader import ProstateMRIDataModule
-from traincontrastiveD4 import TrainD4
-from traincontrastiveSE3 import TrainSE3
-from utils import setup_distributed
-from torch.nn.parallel.distributed import DistributedDataParallel
+from models import *
+
+
 def str_to_bool(value):
     if isinstance(value, bool):
         return value
